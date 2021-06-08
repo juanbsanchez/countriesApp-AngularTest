@@ -6,6 +6,7 @@ import {SharedModule} from "./shared/shared.module";
 import {CountryModule} from "./country/country.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {RouterModule} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {RouterModule} from "@angular/router";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     SharedModule,
     CountryModule,
     RouterModule
