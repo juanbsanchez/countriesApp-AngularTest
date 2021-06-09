@@ -15,8 +15,8 @@ export class ByCountryComponent{
   search(){
     this.error = false;
     this.countryService.searchCountry(this.term)
-      .subscribe((resp) => {
-          console.log(resp);
+      .subscribe((countries) => {
+          console.log(countries);
         },
         (error) => {
           this.error = true;
