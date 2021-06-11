@@ -10,14 +10,22 @@
       'btn-primary' : region === activeRegion,
       'btn-outline-primary' : region !== activeRegion
     }"-->
+<!--  [class]="(region === activeRegion) ? 'btn btn-primary': 'btn btn-outline-primary'"-->
 
   <button
     *ngFor="let region of regions"
     class="btn"
-    [class]="(region === activeRegion) ? 'btn btn-primary': 'btn btn-outline-primary'"
+    [class]="getCssClass(region)"
     (click)="activateRegion(region)"
     >
-    {{region}}
+    {{region | titlecase}}
   </button>
 </div>
+
+<app-country-table
+  *ngIf="countries.length > 0"
+  [countries]="countries"
+>
+
+</app-country-table>
 
