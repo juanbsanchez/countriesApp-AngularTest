@@ -1,26 +1,30 @@
-<h3>Search by region <small>{{activeRegion | titlecase}} </small></h3>
-<hr/>
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h3>Search by region <small>{{activeRegion | titlecase}} </small></h3>
+  <hr/>
 
-<h5>Select region</h5>
+  <h5>Select region</h5>
 
-<div class="roe">
-  <col>
-<!--  [class.btn-primary]="activeRegion === region"-->
-<!--  [ngClass]="{
-      'btn-primary' : region === activeRegion,
-      'btn-outline-primary' : region !== activeRegion
-    }"-->
-<!--  [class]="(region === activeRegion) ? 'btn btn-primary': 'btn btn-outline-primary'"-->
+  <div class="roe">
 
-  <button
-    *ngFor="let region of regions"
-    class="btn"
-    [class]="getCssClass(region)"
-    (click)="activateRegion(region)"
+    <!--  [class.btn-primary]="activeRegion === region"-->
+    <!--  [ngClass]="{
+          'btn-primary' : region === activeRegion,
+          'btn-outline-primary' : region !== activeRegion
+        }"-->
+    <!--  [class]="(region === activeRegion) ? 'btn btn-primary': 'btn btn-outline-primary'"-->
+
+    <button
+      *ngFor="let region of regions"
+      class="btn"
+      [class]="getCssClass(region)"
+      (click)="activateRegion(region)"
     >
-    {{region | titlecase}}
-  </button>
+      {{region | titlecase}}
+    </button>
+  </div>
 </div>
+
+
 
 <app-country-table
   *ngIf="countries.length > 0"
