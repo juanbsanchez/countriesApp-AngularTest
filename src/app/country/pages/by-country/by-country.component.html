@@ -12,6 +12,26 @@
       </app-country-input>
     </div>
   </div>
+  <ul class="list-group" *ngIf="showSuggestions">
+    <li
+      *ngFor="let sugCountries of suggestedCountries"
+      class="list-group-item list-group-item-action">
+      <a
+        class="nav-link"
+        [routerLink]="['/country', sugCountries.alpha2Code]">
+        {{sugCountries.name}}
+      </a>
+    </li>
+    <li
+      class="list-group-item list-group-item-action">
+      <a
+        class="nav-link"
+        (click)="searchSuggested(term)"
+      >
+        Search "{{term}}"
+      </a>
+    </li>
+  </ul>
   <hr>
 </div>
 
